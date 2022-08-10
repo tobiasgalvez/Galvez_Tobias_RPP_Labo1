@@ -121,12 +121,16 @@ int listaConsultasDiagnosticadas(eConsulta lista[], int tam, eMedico medicos[], 
 	{
 		for(int i=0;i<tam;i++)
 		{
-			if(lista[i].estado == LLENO && lista[i].idDiagnostico != 0)
-				{
-					mostrarConsulta(lista[i], medicos[i], medicos, tam, diagnosticos, tamDiagnosticos, especialidades, tamEspecialidades);
-					flag=1;
+			for(int j=0;j<tamMedicos;j++)
+			{
+				if(lista[i].estado == LLENO && lista[i].idDiagnostico != 0 && lista[i].idMedico == medicos[j].idMedico)
+					{
+						mostrarConsulta(lista[i], medicos[j], medicos, tam, diagnosticos, tamDiagnosticos, especialidades, tamEspecialidades);
+						flag=1;
 
-				}
+					}
+
+			}
 		}
 
 		todoOk=1;
@@ -162,7 +166,7 @@ int listaConsultasDiagnosticadasCovid19(eConsulta lista[], int tam, eMedico medi
 			{
 				for(int j=0;j<tamMedicos;j++)
 				{
-					if(lista[i].estado == LLENO && lista[i].idDiagnostico == 2 && (lista[i].fecha.mes >=3 && lista[i].fecha.anio >= 2020) && medicos[j].idEspecialidad == especialidadIngresada)
+					if(lista[i].estado == LLENO && lista[i].idDiagnostico == 2 && (lista[i].fecha.mes >=3 && lista[i].fecha.anio >= 2020) && lista[i].idMedico == medicos[j].idMedico &&medicos[j].idEspecialidad == especialidadIngresada)
 					{
 							mostrarConsulta(lista[i], medicos[j], medicos, tam, diagnosticos, tamDiagnosticos, especialidades, tamEspecialidades);
 							flag=1;
@@ -897,3 +901,36 @@ int medicoMasCercanoAClinica(eConsulta lista[],int tam,eMedico medicos[],int tam
 
 	return todoOk;
 }
+
+//cuantos medicos pertenecen a dicha clinica
+int medicosEnClinica(eConsulta lista[],int tam,eMedico medicos[],int tamMedicos, eDiagnostico diagnosticos[], int tamDiagnosticos, eEspecialidad especialidades[], int tamEspecialidades, eClinica clinicas[], int tamClinicas )
+{
+	int todoOk=0;
+	int idClinica;
+	int indiceClinica;
+
+
+
+	if(lista != NULL && tam > 0 && medicos != NULL && tamMedicos > 0 && diagnosticos != NULL && tamDiagnosticos > 0 && especialidades != NULL && tamEspecialidades > 0 && clinicas != NULL && tamClinicas > 0)
+	{
+			listarClinicas(clinicas, tamClinicas);
+			utn_getEntero(&idClinica, 3, "Ingrese id de clinica para consultar medicos que atiendan en ella: \n", "ERROR, id invalido\n", 100, 101);
+			indiceClinica = buscarClinicaId(clinicas, tamClinicas, idClinica);
+
+			printf("El/los medicos que atienden en '%s' ubicada en %s %d es/son:\n", clinicas[indiceClinica].descripcion, clinicas[indiceClinica].calle, clinicas[indiceClinica].altura);
+				for(int i=0;i<tamMedicos;i++)
+				{
+					if(medicos[i].idClinica == idClinica)
+					{
+						printf("%s\n", medicos[i].nombre);
+					}
+
+				}
+				todoOk=1;
+
+	}
+
+	return todoOk;
+}
+
+

@@ -53,6 +53,7 @@ int subMenu()
 		    printf("j- La especialidad más estudiada por los médicos\n");
 		    printf("k- La enfermedad menos diagnosticada\n");
 		    printf("l- Mostrar de una clinica determinada, el medico que viva mas cerca\n");
+		    printf("m- Listado de medicos que pertenecen a una clinica determinada\n");
 
 		    utn_getCaracter(&opcion, 3, "Ingrese una opcion:\n", "ERROR, reintente nuevamente\n");
 

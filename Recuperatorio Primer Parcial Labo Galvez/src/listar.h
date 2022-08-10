@@ -183,4 +183,20 @@ int enfermedadMenosDiagnosticada(eConsulta lista[],int tam,eMedico medicos[],int
  * @return 1 si tuvo exito, 0 si no
  */
 int medicoMasCercanoAClinica(eConsulta lista[],int tam,eMedico medicos[],int tamMedicos, eDiagnostico diagnosticos[], int tamDiagnosticos, eEspecialidad especialidades[], int tamEspecialidades, eClinica clinicas[], int tamClinicas );
+
+/**
+ * Funcion que permite averiguar los medicos que pertenecen a una clinica determinada
+ * @param lista
+ * @param tam
+ * @param medicos
+ * @param tamMedicos
+ * @param diagnosticos
+ * @param tamDiagnosticos
+ * @param especialidades
+ * @param tamEspecialidades
+ * @param clinicas
+ * @param tamClinicas
+ * @return 1 si tuvo exito, 0 si no
+ */
+int medicosEnClinica(eConsulta lista[],int tam,eMedico medicos[],int tamMedicos, eDiagnostico diagnosticos[], int tamDiagnosticos, eEspecialidad especialidades[], int tamEspecialidades, eClinica clinicas[], int tamClinicas );
 #endif /* LISTAR_H_ */

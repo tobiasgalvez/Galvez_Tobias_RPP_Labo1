@@ -325,12 +325,15 @@ int diagnosticarConsulta(eConsulta lista[], int tam, eMedico medicos[], int tamM
 
 	for(int i=0;i<tam;i++)
 	{
+		for(int j=0;j<tamMedicos;j++)
+		{
+			if(lista[i].estado == LLENO && lista[i].idMedico == idMedico && lista[i].idDiagnostico == 0 && medicos[j].idMedico == idMedico)
+				{
+					mostrarConsulta(lista[i], medicos[j], medicos, tamMedicos, diagnosticos, tamDiagnosticos, especialidades, tamEspecialidades);
+					flag=1;
+				}
+		}
 
-		if(lista[i].estado == LLENO && lista[i].idMedico == idMedico && lista[i].idDiagnostico == 0)
-			{
-				mostrarConsulta(lista[i], medicos[i], medicos, tamMedicos, diagnosticos, tamDiagnosticos, especialidades, tamEspecialidades);
-				flag=1;
-			}
 	}
 
 

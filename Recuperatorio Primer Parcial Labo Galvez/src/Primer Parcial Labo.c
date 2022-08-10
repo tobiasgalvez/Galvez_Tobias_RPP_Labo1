@@ -23,6 +23,7 @@ i. Porcentaje de consultas diagnosticadas que atiende cada mÃ©dico en funciÃ�
 j. La especialidad mÃ¡s estudiada por los mÃ©dicos.
 k. La enfermedad menos diagnosticada.
 l. Mostrar de una clinica determinada, el medico que viva mas cerca
+m. Listado de medicos que pertenecen a una clinica determinada
 
 
 GALVEZ TOBIAS 1C
@@ -201,6 +202,9 @@ int main(void) {
 							break;
 						case 'l':
 							medicoMasCercanoAClinica(lista, TAM, listaMedicos, TAMMEDICOS, listaDiagnosticos, TAMDIAGNOSTICOS, listaEspecialidades, TAMESPECIALIDADES, listaClinicas, TAMCLINICAS);
+							break;
+						case 'm':
+							medicosEnClinica(lista, TAM, listaMedicos, TAMMEDICOS, listaDiagnosticos, TAMDIAGNOSTICOS, listaEspecialidades, TAMESPECIALIDADES, listaClinicas, TAMCLINICAS);
 						}
 	            	}
 	            	break;
