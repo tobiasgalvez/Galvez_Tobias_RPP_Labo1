@@ -5,4 +5,4 @@ enlace a drive con vídeo explicativo y pdf: https://drive.google.com/drive/fold
 
 ENLACE A CARPETA CON DEFENSA DE PRIMER PARCIAL CON FECHA 10/08 : https://drive.google.com/drive/folders/1DlvJgikuvCq1WQTSVqOUBCKd3bcI0mGk?usp=sharing
 
-ENLACE A VIDEO DIRECTO:https://drive.google.com/file/d/1H2Ya6TNVV0vzr9mu8jTkcOgpKa4mSFGM/view?usp=sharing
+ENLACE A VIDEO DIRECTO DEFENSA DE PRIMER PARCIAL CON FECHA 10/08 :https://drive.google.com/file/d/1H2Ya6TNVV0vzr9mu8jTkcOgpKa4mSFGM/view?usp=sharing
